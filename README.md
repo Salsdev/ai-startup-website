@@ -1,6 +1,6 @@
 # 🚀 Git Branching & Workflow Practical Demo
 
-This repository showcases a hands-on demonstration of basic Git operations, specifically focusing on **branching**, **switching**, **creating new branches**, **staging**, **committing**, and **pushing changes** to a remote repository.
+This repository showcases a hands-on demonstration of essential Git operations, specifically focusing on **branching**, **switching**, **creating new branches**, **staging**, **committing**, **pushing changes**, **pulling updates**, **merging branches**, and **resolving merge conflicts**.
 
 ---
 
@@ -14,16 +14,20 @@ The project contains a sample directory with files used to demonstrate Git opera
 
 ## 🌿 Creating and Switching Branches
 
-To create and switch to a new branch named `feature-branch`:
+Two branches were created and used in this demonstration:
+- `update-navigation`
+- `add-contact-info`
+
+To create and switch to a new branch named `update-navigation`:
 
 ```bash
-git branch feature-branch
-git switch feature-branch
+git branch update-navigation
+git switch update-navigation
 ```
 
 Alternatively, use:
 ```bash
-git checkout -b feature-branch
+git checkout -b update-navigation
 ```
 
 ![Creating Branch](creating-branch.png)
@@ -58,7 +62,7 @@ To stage and commit the changes:
 
 ```bash
 git add .
-git commit -m "Updated index and added jerry's work"
+git commit -m "Updated index and added Jerry's work"
 ```
 
 ![Index File Change](index-file.png)
@@ -72,10 +76,59 @@ git commit -m "Updated index and added jerry's work"
 After committing locally, the changes were pushed to GitHub:
 
 ```bash
-git push origin feature-branch
+git push origin update-navigation
+```
+
+Repeat the same steps for the `add-contact-info` branch:
+
+```bash
+git checkout -b add-contact-info
+git add .
+git commit -m "Added contact information"
+git push origin add-contact-info
 ```
 
 ![GitHub Repository](repository.png)
+
+---
+
+## ⬇️ Pulling Updates from GitHub
+
+To ensure the local branch is up to date, pull updates from GitHub:
+
+```bash
+git pull origin main
+```
+
+![Pull Request](pull-request.png)
+
+---
+
+## 🔀 Merging Branches
+
+To merge changes from branches into the `main` branch:
+
+```bash
+git checkout main
+git merge update-navigation
+git merge add-contact-info
+```
+
+![Merge Branches](merge-branches.png)
+
+---
+
+## ⚠️ Resolving Merge Conflicts
+
+If merge conflicts occur, manually resolve conflicts within affected files, then stage and commit the resolution:
+
+```bash
+# resolve conflicts manually
+git add .
+git commit -m "Resolved merge conflicts"
+```
+
+![Resolving Conflicts](resolving-conflicts.png)
 
 ---
 
@@ -83,10 +136,13 @@ git push origin feature-branch
 
 This practical session covered:
 
-- ✅ Creating and switching branches  
+- ✅ Creating and switching branches (`update-navigation`, `add-contact-info`)  
 - ✅ Making and tracking file changes  
 - ✅ Staging and committing changes  
 - ✅ Pushing to a remote GitHub repository  
+- ✅ Pulling updates from a remote repository
+- ✅ Merging branches
+- ✅ Resolving merge conflicts
 
 These are essential skills for managing code in collaborative environments and maintaining clean, organized version histories.
 
@@ -102,7 +158,7 @@ These are essential skills for managing code in collaborative environments and m
 
 ## 📎 GitHub Repository
 
-> [(https://github.com/Salsdev/ai-startup-website)]
+> [https://github.com/Salsdev/ai-startup-website](https://github.com/Salsdev/ai-startup-website)
 
 ---
 
